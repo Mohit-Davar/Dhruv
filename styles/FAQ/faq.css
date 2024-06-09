@@ -1,0 +1,11 @@
+.accordion {
+  transition: 0.4s;
+}
+
+.accordion i {
+  transition: 0.2s;
+}
+
+.panel {
+  transition: max-height 0.2s ease-out;
+}
