@@ -42,7 +42,7 @@
                 style="background-image: url(/Images/User/Passenger-Registration.jpg);">
             </div>
             <div class="form flex flex-col items-center w-full min-h-1/2 lg:w-1/2 lg:min-h-full py-10 px-10 gap-5">
-                <h1 class="font-archivoBlack text-2xl text-themeColorOne">Welcome</h1>
+                <h1 class="font-archivoBlack text-2xl text-themeColorOne">Join Us</h1>
                 <!-- Personal Form -->
                 <form action="" class="Personal self-start flex flex-col w-full gap-5">
                     <div class="inputFields">
@@ -59,12 +59,17 @@
                         <!-- Phone Number -->
                         <!-- Password -->
                     </div>
-                    <button class="bg-themeColorOne w-fit self-center px-5 py-2 rounded-3xl">Get OTP</button>
+                    <div class="buttons self-center flex justify-center items-center gap-5">
+                        <button class="bg-themeColorOne w-fit  px-5 py-2 rounded-3xl">Get OTP</button>
+                        <a href="UserHomePage.html" class="bg-themeColorOne w-fit px-5 py-2 rounded-3xl">Home
+                        </a>
+                    </div>
                     <input type="number" name="DriverOTP" placeholder="Enter OTP"
                         class="outline-none border-b-2 border-b-black py-1 w-full" id="DriverOTP">
                     <button type="submit" class="bg-themeColorOne w-fit self-center px-5 py-2 rounded-3xl submit">Submit
                         OTP</button>
-                    <a href="UserLogin.html" class="self-center text-themeColorOne font-poppins">Already a Member?</a>
+                    <a href="UserLogin.html" class=" text-themeColorOne self-center font-poppins">Already a
+                        Member?</a>
                 </form>
             </div>
         </div>
@@ -73,25 +78,25 @@
 </body>
 <script>
     //Declaring Input Field
-class InputField {
+    class InputField {
 
-constructor(id, name, placeholder, icon, type, label = "") {
-    this.id = id
-    this.name = name
-    this.placeholder = placeholder
-    this.icon = icon
-    this.type = type
-    this.label = label
-}
-}
+        constructor(id, name, placeholder, icon, type, label = "") {
+            this.id = id
+            this.name = name
+            this.placeholder = placeholder
+            this.icon = icon
+            this.type = type
+            this.label = label
+        }
+    }
 
-const PersonalInputForm = document.querySelector('form.Personal .inputFields')
-const DocumentInputForm = document.querySelector('form.Documents .inputFields')
+    const PersonalInputForm = document.querySelector('form.Personal .inputFields')
+    const DocumentInputForm = document.querySelector('form.Documents .inputFields')
 
-// function to generate html
-function generateInputField(id, name, placeholder, icon, type, container, label) {
-return (
-    container.innerHTML = container.innerHTML + `
+    // function to generate html
+    function generateInputField(id, name, placeholder, icon, type, container, label) {
+        return (
+            container.innerHTML = container.innerHTML + `
                 <div class="${id} relative">
                     <input type="${type}" name="${name}" placeholder="${placeholder}"
                         class="outline-none border-b-2 border-b-black py-1 w-full"
@@ -100,21 +105,19 @@ return (
                     <label for="${id}" class="text-gray-500 font-robotoCondensed">${label}</label>
                 </div>
     `
-)
-}
+        )
+    }
 
-//Database of Different Personal Input Fields
-const PersonalInputFields = [
-new InputField("EmailUser", "EmailUser", "Email", "fa-solid fa-envelope", "email"),
-new InputField("DOBUser", "DOBUser", "Date of Birth", "fa-solid fa-calendar-days", "date"),
-new InputField("PhoneUser", "PhoneUser", "Phone Number", "fa-solid fa-phone", "number"),
-new InputField("PasswordUser", "PasswordUser", "Password", "fa-solid fa-lock", "password"),
-]
-PersonalInputFields.forEach(InputField => {
-generateInputField(InputField.id, InputField.name, InputField.placeholder, InputField.icon, InputField.type, PersonalInputForm, '')
-})
-
-
+    //Database of Different Personal Input Fields
+    const PersonalInputFields = [
+        new InputField("EmailUser", "EmailUser", "Email", "fa-solid fa-envelope", "email"),
+        new InputField("DOBUser", "DOBUser", "Date of Birth", "fa-solid fa-calendar-days", "date"),
+        new InputField("PhoneUser", "PhoneUser", "Phone Number", "fa-solid fa-phone", "number"),
+        new InputField("PasswordUser", "PasswordUser", "Password", "fa-solid fa-lock", "password"),
+    ]
+    PersonalInputFields.forEach(InputField => {
+        generateInputField(InputField.id, InputField.name, InputField.placeholder, InputField.icon, InputField.type, PersonalInputForm, '')
+    })
 
 
 
@@ -124,20 +127,22 @@ generateInputField(InputField.id, InputField.name, InputField.placeholder, Input
 
 
 
-// flatpickr
-flatpickr("#DOBUser", {
-dateFormat: "d.m.Y",
-maxDate: "today",
-minDate: "01-01-1950",
-})
 
 
-let OTPButton=document.querySelector('form.Personal button.submit')
-OTPButton.addEventListener("click",(e)=>{
-e.preventDefault()
-document.querySelector('form.Personal').style.display="none"
-document.querySelector('form.Documents').style.display="flex"
-})
+    // flatpickr
+    flatpickr("#DOBUser", {
+        dateFormat: "d.m.Y",
+        maxDate: "today",
+        minDate: "01-01-1950",
+    })
+
+
+    let OTPButton = document.querySelector('form.Personal button.submit')
+    OTPButton.addEventListener("click", (e) => {
+        e.preventDefault()
+        document.querySelector('form.Personal').style.display = "none"
+        document.querySelector('form.Documents').style.display = "flex"
+    })
 </script>
 
 </html>
