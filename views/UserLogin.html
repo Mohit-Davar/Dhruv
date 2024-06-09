@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vahan Chalak</title>
+    <link rel="shortcut icon" href="/Images/Logo/Logo.png" type="image/x-icon">
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- StyleSheets -->
+    <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="/styles/NumberInput.css">
+</head>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+<body>
+    <div class="main min-h-screen flex justify-center items-center bg-cover bg-center py-5"
+        style="background-image: url(/Images/Driver/FormBGPic.png);">
+        <!-- BG Video -->
+        <video autoplay muted loop id="myVideo" class="hidden lg:block lg:fixed top-0 left-0 min-h-full min-w-full">
+            <source src="/Images/Driver/FormBG.mp4" type="video/mp4">
+        </video>
+        <div
+            class="form-container w-[90vw] min-h-[80vh] md:w-[70vw] bg-white z-10 relative p-3 flex lg:flex-row flex-col">
+            <div class="form-image w-full min-h-1/2 lg:w-1/2 lg:min-h-full bg-center bg-cover bg-no-repeat"
+                style="background-image: url(/Images/Driver/Driver-Login.jpeg);">
+            </div>
+            <div class="form flex flex-col items-center w-full min-h-1/2 lg:w-1/2 lg:min-h-full py-10 px-10 gap-5">
+                <h1 class="font-archivoBlack text-2xl text-themeColorOne">Login Form</h1>
+                <form action="" class="self-start flex flex-col w-full gap-5">
+                    <div class="inputFields">
+                        <div class="phone relative">
+                            <input type="number" name="UserLNumber" placeholder="Enter Registered Number"
+                                class="outline-none border-b-2 border-b-black py-1 w-full" id="UserLNumber">
+                            <i class="fa-solid fa-phone absolute bottom-2 right-4 text-themeColorOne"></i>
+                        </div>
+                        <div class="password relative">
+                            <input type="password" name="UserLPassword" placeholder="Enter Your Password"
+                                class="outline-none border-b-2 border-b-black py-1 w-full" id="UserLPassword">
+                            <i class="fa-solid fa-lock absolute bottom-2 right-4 text-themeColorOne"></i>
+                        </div>
+                    </div>
+                    <button class="bg-themeColorOne w-fit self-center px-5 py-2 rounded-3xl">Submit</button>
+                    <a href="UserSignUp.html" class="self-center text-themeColorOne font-poppins">New
+                        Member?</a>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="/scripts/InputFieldDriverLogin.js"></script>
+
+</html>
